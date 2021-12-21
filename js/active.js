@@ -325,11 +325,12 @@
 /*============= Cart Toggler ==============*/
     function cartToggler() {
         var trigger = $('.cartbox_active'),
-          container = $('.minicart__active');
+          container = $('.minicart__active'),
+          settingContainer = $('.setting__block');
         trigger.on('click', function (e) {
           e.preventDefault();
           container.toggleClass('is-visible');
-
+          settingContainer.removeClass('is-visible');
         });
         trigger.on('click', function (e) {
           e.preventDefault();
@@ -345,10 +346,12 @@
 /*============= Setting Toggler ==============*/
     function settingToggler() {
         var settingTrigger = $('.setting__active'),
-          settingContainer = $('.setting__block');
+          settingContainer = $('.setting__block'),
+          container = $('.minicart__active');
         settingTrigger.on('click', function (e) {
           e.preventDefault();
           settingContainer.toggleClass('is-visible');
+          container.removeClass('is-visible');
         });
         settingTrigger.on('click', function (e) {
           e.preventDefault();
